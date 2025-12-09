@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wikijs
+  labels:
+    app: wikijs
+spec:
+  selector:
+    matchLabels:
+      app: wikijs
+  template:
+    metadata:
+      labels:
+        app: wikijs
+    spec:
+      containers:
+      - name: wikijs
+        image: requarks/wiki:2
+        ports:
+        - containerPort: 3000
+        env:
+        - name: DB_TYPE
+          value: "postgres"
+        - name: DB_HOST
+          value: "postgres-service"
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_USER
+          value: "wikiuser"
+        - name: DB_PASS
+          value: "wikipass"
+        - name: DB_NAME
+          value: "wiki"
+        volumeMounts:
+        - name: wiki-logs
+          mountPath: /wiki/logs
+          subPath: logs
+        - name: wiki-logs
+          mountPath: /wiki/data
+          subPath: data
+      volumes:
+      - name: wiki-logs
+        emptyDir: {}
