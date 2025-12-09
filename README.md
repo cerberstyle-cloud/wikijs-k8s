@@ -12,8 +12,13 @@
 
 Deploy
 ---
-Приложение разворачивается через команду (находясь в директории проекта)
-```kubectl apply -f deploy/```
+Загрузка и деплой приложения:
+```
+git clone https://github.com/cerberstyle-cloud/wikijs-k8s
+cd ./wikijs-k8s
+kubectl apply -f deploy/
+```
+
 
 Проверка работы приложения
 ---
@@ -33,7 +38,9 @@ Deploy
 
 Если вы использовали способ с командой *curl*, то вы должны увидеть подобный вывод:
 
-```<!DOCTYPE html>
+```
+<!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta charset="UTF-8"><meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1, maximum-scale=5"><meta name="theme-color" content="#1976d2"><meta name="msapplication-TileColor" content="#1976d2"><meta name="msapplication-TileImage" content="/_assets/favicons/mstile-150x150.png"><title>Welcome | Wiki.js</title><meta name="description"><meta property="og:title" content="Welcome"><meta property="og:type" content="website"><meta property="og:description"><meta property="og:image"><meta property="og:url" content="https://wiki.yourdomain.com/"><meta property="og:site_name" content="Wiki.js"><link rel="apple-touch-icon" sizes="180x180" href="/_assets/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="192x192" href="/_assets/favicons/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/_assets/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/_assets/favicons/favicon-16x16.png"><link rel="mask-icon" href="/_assets/favicons/safari-pinned-tab.svg" color="#1976d2"><link rel="manifest" href="/_assets/manifest.json"><script>var siteConfig = {"title":"Wiki.js","theme":"default","darkMode":false,"tocPosition":"left","lang":"en","rtl":false,"company":"","contentLicense":"","footerOverride":"","logoUrl":"https://static.requarks.io/logo/wikijs-butterfly.svg"}
 var siteLangs = []
-</script><link type="text/css" rel="stylesheet" href="/_assets/css/app.2144b7acef37b4a5cc2e.css"><script type="text/javascript" src="/_assets/js/runtime.js?1755069093"></script><script type="text/javascript" src="/_assets/js/app.js?1755069093"></script></head><body><div class="is-fullscreen" id="root"><welcome locale="en"></welcome></div></body></html>```
+</script><link type="text/css" rel="stylesheet" href="/_assets/css/app.2144b7acef37b4a5cc2e.css"><script type="text/javascript" src="/_assets/js/runtime.js?1755069093"></script><script type="text/javascript" src="/_assets/js/app.js?1755069093"></script></head><body><div class="is-fullscreen" id="root"><welcome locale="en"></welcome></div></body></html>
+```
